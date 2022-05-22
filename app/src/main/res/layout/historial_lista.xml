@@ -16,22 +16,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/borde_card_view"
         android:orientation="horizontal"
         android:padding="10dp">
-
-        <TextView
-            android:id="@+id/nro"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:text="#1"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lblcodigo"
@@ -45,12 +31,11 @@
             android:textSize="16dp"
             android:textStyle="bold"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/nro" />
+            card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/lblnombre"
             android:layout_width="80dp"
-
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -64,7 +49,6 @@
         <TextView
             android:id="@+id/lbledad"
             android:layout_width="80dp"
-
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -75,29 +59,55 @@
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/lblnombre" />
 
+
+        <TextView
+            android:id="@+id/lblfecha"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Fecha"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/lbledad" />
+
+        <TextView
+            android:id="@+id/lblevento"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Evento"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/lblfecha" />
+
         <TextView
             android:id="@+id/codigo"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="1dp"
-            android:text="codigo"
+            android:text="[código]"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            card_view:layout_constraintStart_toEndOf="@+id/lblcodigo"
-            card_view:layout_constraintTop_toBottomOf="@+id/nro" />
+            card_view:layout_constraintStart_toEndOf="@+id/lblnombre"
+            card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/nombre"
-            android:layout_width="250dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="Nombre"
+            android:text="[nombre y apellido]"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
@@ -108,89 +118,44 @@
             android:id="@+id/edad"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:text="edad"
+            android:text="[nombre y apellido]"
             android:textColor="@color/black"
             android:textSize="16dp"
             android:textStyle="bold"
-            card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toEndOf="@+id/lbledad"
             card_view:layout_constraintTop_toBottomOf="@+id/nombre" />
 
-        <ImageView
-            android:id="@+id/btn_editar"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/edit"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            card_view:layout_constraintEnd_toStartOf="@+id/btn_borrar"
-            card_view:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/fecha"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
 
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="[fecha]"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toEndOf="@+id/lblfecha"
+            card_view:layout_constraintTop_toBottomOf="@+id/edad" />
 
-        <ImageView
-            android:id="@+id/btn_borrar"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/trash"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/evento"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
 
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="[evento]"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        card_view:layout_constraintStart_toEndOf="@+id/lblevento"
+        card_view:layout_constraintTop_toBottomOf="@+id/fecha" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/btn_editar"
-                android:layout_width="50dp"
-                android:layout_height="28dp"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="20dp"
-                android:layout_toStartOf="@+id/btn_borrar"
-                android:background="@drawable/edit"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground" />
-
-            <ImageView
-                android:id="@+id/btn_borrar"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:background="@drawable/trash"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground" />
-
-
-
-
-        </RelativeLayout>
-
-
-    </LinearLayout-->
 
 </androidx.cardview.widget.CardView>

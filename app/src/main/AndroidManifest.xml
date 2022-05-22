@@ -12,7 +12,7 @@
         android:theme="@style/Theme.DeberSemana5y6"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Historial"
+            android:name=".HistorialActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

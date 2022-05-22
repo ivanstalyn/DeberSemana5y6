@@ -30,18 +30,18 @@
        android:textStyle="bold" />
 
    <Button
-       android:id="@+id/Hhistorial"
+       android:id="@+id/gohistorial"
        android:layout_width="130dp"
        android:layout_height="wrap_content"
-       android:background="#fff"
-       android:text="historial"
-       android:textColor="#fff"
-       android:layout_gravity="center"
-       android:layout_marginRight="110dp"
        android:layout_alignParentEnd="true"
+       android:layout_gravity="center"
        android:layout_marginTop="60dp"
-
-       />
+       android:layout_marginRight="110dp"
+       android:background="#fff"
+       android:clickable="true"
+       android:onClick="irAHistorial"
+       android:text="historial"
+       android:textColor="#fff" />
 
    <ImageView
        android:layout_width="50dp"

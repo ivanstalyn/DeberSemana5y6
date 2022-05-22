@@ -56,7 +56,10 @@ public class EstudianteAdaptador extends RecyclerView.Adapter<EstudianteAdaptado
     @Override
     public void onBindViewHolder(@NonNull EstudianteAdaptador.MiVistaHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.nro.setText(String.valueOf(position + 1)+". ");
+        holder.codigo.setText(estudiante.get(position).getCodigo());
         holder.nombre.setText(estudiante.get(position).getNombre()+ " "+estudiante.get(position).getApellido());
+        holder.edad.setText(estudiante.get(position).getEdad());
+
         holder.btn_editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,7 +127,7 @@ public class EstudianteAdaptador extends RecyclerView.Adapter<EstudianteAdaptado
 
     private void Enviar(String metodo, String ws, final Dialog dialog, String _codigo, String _nombre, String _apellido, String _edad) {
         JsonObjectRequest jsonObjReq;
-
+        DBHelper db = new DBHelper(context);
         if (metodo == "PUT") {
             Map<String,String> params = new HashMap<>();
             params.put("nombre",_nombre);
@@ -176,13 +179,15 @@ public class EstudianteAdaptador extends RecyclerView.Adapter<EstudianteAdaptado
     }
 
     public class MiVistaHolder extends RecyclerView.ViewHolder{
-        private TextView nro, nombre;
+        private TextView nro, codigo, nombre, edad;
         private ImageView btn_editar, btn_borrar;
 
         public MiVistaHolder(@NonNull View itemView){
             super(itemView);
             nro = (TextView) itemView.findViewById(R.id.nro);
+            codigo = (TextView) itemView.findViewById(R.id.codigo);
             nombre = (TextView) itemView.findViewById(R.id.nombre);
+            edad = (TextView) itemView.findViewById(R.id.edad);
             btn_editar = (ImageView) itemView.findViewById(R.id.btn_editar);
             btn_borrar = (ImageView) itemView.findViewById(R.id.btn_borrar);
         }

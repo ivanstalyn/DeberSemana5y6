@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -15,13 +16,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -182,6 +182,21 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                     }
                 });
         Volley.newRequestQueue(this).add(jsonObjReq);
+    }
+
+    public void irAHistorial(View v){
+
+        Button his;
+        his = findViewById(R.id.gohistorial);
+        his.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, HistorialActivity.class );
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, "Historial de actividades", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

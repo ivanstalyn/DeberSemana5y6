@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A8DADC"
-    tools:context=".Historial">
+    tools:context=".HistorialActivity">
 
 
     <TextView
@@ -35,12 +35,14 @@
         android:id="@+id/regresar"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:layout_marginRight="50dp"
-        android:background="#fff"
-        android:text="REgresar"
+        android:clickable="true"
+        android:onClick="irAInicio"
+        android:text="Regresar"
         android:textColor="#fff" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -53,7 +55,7 @@
         android:layout_marginRight="17dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/history"
+            android:id="@+id/rwhistorial"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

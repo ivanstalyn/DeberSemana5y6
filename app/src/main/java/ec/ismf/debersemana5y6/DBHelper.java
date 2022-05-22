@@ -39,14 +39,6 @@ public class DBHelper extends SQLiteOpenHelper {
         long res = DB.insert("historial", null, cv);
     }
 
-    public void borrar( String evento ) {
-        SQLiteDatabase DB = this.getWritableDatabase();
-        Cursor cursor = DB.rawQuery("select * from historial where evento = ?", new String[]{evento});
-        if (cursor.getCount() > 0) {
-            long result = DB.delete("historial", "evento=?", new String[]{evento});
-        }
-    }
-
     public Cursor listar() {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("select * from historial", null);
